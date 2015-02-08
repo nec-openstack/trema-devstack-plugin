@@ -95,6 +95,7 @@ function install_trema {
 }
 
 function start_trema {
+    enable_service trema
     screen_it trema "cd $TREMA_SS_DIR && plackup -r -p $OFC_API_PORT restapi.psgi"
     if ! timeout $SERVICE_TIMEOUT sh -c "while ! wget --no-proxy -q -O- http://$OFC_API_HOST:$OFC_API_PORT/networks; do sleep 1; done"; then
         die $LINENO "Trema Sliceable Switch REST API did not start"
