@@ -1,7 +1,11 @@
-# devstack-plugins
+# devstack-plugins for Trema Sliceable Switch
 
-``master`` repository does not contain any devstack plugins.
-All plugins are available in each **branch**.
+Trema is a Full-Stack OpenFlow Framework in Ruby and C
+https://github.com/trema/trema
+
+Trema Sliceable Switch is an OpenFlow controller which provides
+virtual layer-2 network slices.
+https://github.com/trema/apps/wiki
 
 ## References
 
