@@ -18,7 +18,7 @@ function configure_trema {
     cd $_pwd
 
     cp $TREMA_SS_DIR/sliceable_switch_null.conf $TREMA_SS_CONFIG
-    sed -i -e "s|^\$apps_dir.*$|\$apps_dir = \"$TREMA_DIR/apps\"|" \
+    sed -i -e "s|^\$apps_dir.*$|\$apps_dir = \"$TREMA_APPS_DIR\"|" \
         -e "s|^\$db_dir.*$|\$db_dir = \"$TREMA_SS_DB_DIR\"|" \
         $TREMA_SS_CONFIG
 }
@@ -88,10 +88,10 @@ function install_trema {
     # Trema
     gem_install trema
     # Sliceable Switch
-    git_clone $TREMA_APPS_REPO $TREMA_DIR/apps $TREMA_APPS_BRANCH
-    make -C $TREMA_DIR/apps/topology
-    make -C $TREMA_DIR/apps/flow_manager
-    make -C $TREMA_DIR/apps/sliceable_switch
+    git_clone $TREMA_APPS_REPO $TREMA_APPS_DIR $TREMA_APPS_BRANCH
+    make -C $TREMA_APPS_DIR/topology
+    make -C $TREMA_APPS_DIR/flow_manager
+    make -C $TREMA_APPS_DIR/sliceable_switch
 }
 
 function start_trema {
