@@ -1,16 +1,12 @@
-# Trema Sliceable Switch (OpenFlow Controller)
 TREMA_APPS_REPO=${TREMA_APPS_REPO:-https://github.com/trema/apps.git}
 TREMA_APPS_BRANCH=${TREMA_APPS_BRANCH:-master}
-
+TREMA_LOG_LEVEL=${TREMA_LOG_LEVEL:-info}
 TREMA_DIR=${TREMA_DIR:-$DEST/trema}
-TREMA_SS_DIR="$TREMA_DIR/apps/sliceable_switch"
-
 TREMA_DATA_DIR=${TREMA_DATA_DIR:-$DATA_DIR/trema}
+
+TREMA_SS_DIR="$TREMA_DIR/apps/sliceable_switch"
 TREMA_SS_ETC_DIR=$TREMA_DATA_DIR/sliceable_switch/etc
 TREMA_SS_DB_DIR=$TREMA_DATA_DIR/sliceable_switch/db
 TREMA_SS_SCRIPT_DIR=$TREMA_DATA_DIR/sliceable_switch/script
 TREMA_TMP_DIR=$TREMA_DATA_DIR/trema
-
-TREMA_LOG_LEVEL=${TREMA_LOG_LEVEL:-info}
-
 TREMA_SS_CONFIG=$TREMA_SS_ETC_DIR/sliceable.conf
