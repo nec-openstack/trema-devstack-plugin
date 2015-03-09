@@ -28,8 +28,12 @@ function gem_install {
     [ -n "$RUBYGEMS_CMD" ] || get_gem_command
 
     local pkg=$1
-    $RUBYGEMS_CMD list | grep "^${pkg} " && return
-    sudo $RUBYGEMS_CMD install $pkg
+    $RUBYGEMS_CMD list --local | grep "^${pkg} " && return
+    local gem_opts
+    if [ -n "$http_proxy" ]; then
+        gem_opts="-p $http_proxy"
+    fi
+    sudo $RUBYGEMS_CMD install $gem_opts $pkg
 }
 
 function gem_version {
